@@ -20,7 +20,7 @@ router.put('/:id', (req, res) => {
         Config.updateOne({'_id': req.params.id}, {customers: customersLogo}, (err, config) => {
             if(err) res.status(400).json({status: false});
             else {
-                fs.writeFile(`./uploads/customers/${customer.name}-logo.png`, base64Data, 'base64', function(err) {
+                fs.writeFile(`./public/customers/${customer.name}-logo.png`, base64Data, 'base64', function(err) {
                     if(err) res.status(400).json({err});
                     else res.status(200).json({config});
 				});
@@ -32,7 +32,7 @@ router.put('/:id', (req, res) => {
                 if(err) res.status(400).json({status: false});
                 else {
                     req.body.customersRemove.forEach(function(filename) {
-                        filename = './uploads' + filename;
+                        filename = './public' + filename;
                         console.log(filename);
                         fs.unlink(filename, (err) => {
                             if (err) {
@@ -49,7 +49,7 @@ router.put('/:id', (req, res) => {
             console.log(req.body.index);
             let base64Data = '';
             if(req.body.customer.imgRemove) {
-                let filename = './uploads' + req.body.customer.imgRemove;
+                let filename = './public' + req.body.customer.imgRemove;
                 fs.unlink(filename, (err) => {
                     if (err) {
                         console.log(err);
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
                 if(err) res.status(400).json({status: false});
                 else {
                     if(base64Data !== '') {
-                        fs.writeFile(`./uploads/customers/${req.body.customer.name}-logo.png`, base64Data, 'base64', function(err) {
+                        fs.writeFile(`./public/customers/${req.body.customer.name}-logo.png`, base64Data, 'base64', function(err) {
                             if(err) res.status(400).json({err});
                             else res.status(200).json({config});
                         });

@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+import path from 'path';
 import mongoose from 'mongoose';
 
 let app = express();
@@ -14,7 +15,7 @@ app.use(function(req, res, next) {
   next();
 })
 
-app.use(express.static('uploads'));
+app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
 
@@ -31,7 +32,7 @@ app.use('/hire', hire);
 app.use('/blog', blog);
 
 app.get('/', (req, res) => {
-    res.sendFile('/index.html');
+    res.sendFile(path.resolve('', './public/index.html'));
 }) 
 
 app.listen(3001, function () { 

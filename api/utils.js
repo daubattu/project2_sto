@@ -42,7 +42,7 @@ router.post('/send-email', (req, res) => {
 
 router.put('/delete-image', (req, res) => {
   req.body.map((filename) => {
-    fs.unlink(`./uploads${filename}`, (err) => {
+    fs.unlink(`./public${filename}`, (err) => {
       if(err) res.status(400).json(err);
       else res.status(200).json({success: true});
     })

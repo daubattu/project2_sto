@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
 	let base64Data;
 	if(req.body.imagesRemove) {
 		req.body.imagesRemove.forEach(function(filename) {
-			filename = './uploads/' + filename;
+			filename = './public/' + filename;
 			console.log(filename);
 			fs.unlink(filename, (err) => {
 				if (err) {
@@ -81,7 +81,7 @@ router.put('/:id', (req, res) => {
 				arrImage.push(img.data);
 				img.isMainImage = base64Data[i].isMainImage;
 				images.push(img);
-				fs.writeFile(`./uploads/${req.body.name}-${j}.png`, base64Data[i].data, 'base64', function(err) {
+				fs.writeFile(`./public/${req.body.name}-${j}.png`, base64Data[i].data, 'base64', function(err) {
 					console.log(err);
 				});
 			}	
@@ -136,7 +136,7 @@ router.post('/', (req, res) => {
 		if(err) res.status(400).json(err);
 		else {
 			for(var i = 0; i < base64Data.length; i++) {
-				fs.writeFile(`./uploads/${req.body.name}-${i}.png`, base64Data[i], 'base64', function(err) {
+				fs.writeFile(`./public/${req.body.name}-${i}.png`, base64Data[i], 'base64', function(err) {
 					console.log(err);
 				});
 			}

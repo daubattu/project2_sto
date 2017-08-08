@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     newHire.save((err, hire) => {
         if(err) res.status(400).json(err);
         else {
-            fs.writeFile(`./uploads/hire/${hire.title}.png`, base64Data, 'base64', function(error) {
+            fs.writeFile(`./public/hire/${hire.title}.png`, base64Data, 'base64', function(error) {
                 if(error) res.status(400).json(error);
                 else res.status(200).json(hire);
             });
@@ -45,22 +45,22 @@ router.put('/:id', (req, res) => {
         base64Data = req.body.thumbnail.replace(/^data:image\/(png|gif|jpeg);base64,/, "");
     }
     if (req.body.imgRemove) {
-        const filename = './uploads' + req.body.imgRemove;
+        const filename = './public' + req.body.imgRemove;
         fs.unlink(filename, (err) => {
             if (err) console.log('err');
             else console.log('ok');
         })
     } 
     if (base64Data !== '') {
-        if(fs.existsSync(`./uploads/hire/${req.body.title}.png`)) {
+        if(fs.existsSync(`./public/hire/${req.body.title}.png`)) {
             console.log('isExist');
-            fs.unlink(`./uploads/hire/${req.body.title}.png`, (err) => {
+            fs.unlink(`./public/hire/${req.body.title}.png`, (err) => {
                 if (err) console.log(err)
                 else console.log('ok');
             })
         }
         req.body.thumbnail = `/hire/${req.body.title}.png`;
-        fs.writeFile(`./uploads/hire/${req.body.title}.png`, base64Data, 'base64', function (error) {
+        fs.writeFile(`./public/hire/${req.body.title}.png`, base64Data, 'base64', function (error) {
             if(error) console.log(error);
             else console.log('ok');
         });

@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
         if(err) res.status(400).json(err);
         else {
             if(base64Data !== '') {
-                fs.writeFile(`./uploads/blog/${req.body.name}.png`, base64Data, 'base64', function (err) {
+                fs.writeFile(`./public/blog/${req.body.name}.png`, base64Data, 'base64', function (err) {
                     if (err) res.status(400).json(err);
                     else res.status(200).json(blog);
                 });
@@ -40,21 +40,21 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     if(req.body.imgRemove) {
-        fs.unlink(`./uploads${req.body.imgRemove}`, (err) => {
+        fs.unlink(`./public${req.body.imgRemove}`, (err) => {
             if(!err) console.log('ok');
         })
     }
     if(req.body.thumbnail && req.body.thumbnail[0] === 'd') {
         let base64Data = req.body.thumbnail.replace(/^data:image\/(png|gif|jpeg);base64,/, "");
-        if(fs.existsSync(`./uploads/blog/${req.body.name}.png`)) {
+        if(fs.existsSync(`./public/blog/${req.body.name}.png`)) {
             console.log('isExist');
-            fs.unlink(`./uploads/blog/${req.body.name}.png`, (err) => {
+            fs.unlink(`./public/blog/${req.body.name}.png`, (err) => {
                 if (err) console.log(err)
                 else console.log('ok');
             })
         }
         req.body.thumbnail = `/blog/${req.body.name}.png`;
-        fs.writeFile(`./uploads/blog/${req.body.name}.png`, base64Data, 'base64', function (error) {
+        fs.writeFile(`./public/blog/${req.body.name}.png`, base64Data, 'base64', function (error) {
             if(error) console.log(error);
             else console.log('ok');
         });
