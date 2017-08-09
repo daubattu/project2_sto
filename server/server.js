@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 let app = express();
 
-let db = 'mongodb://admin:admin@ds011820.mlab.com:11820/blog';
+let db = 'mongodb://127.0.0.1:27017/project_2';
 mongoose.connect(db);
 
 app.use(function(req, res, next) {
@@ -35,6 +35,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('', './public/index.html'));
 }) 
 
-app.listen(3001, function () { 
+app.listen(80, function () { 
     console.log("Listening to port 2000"); 
 }); 

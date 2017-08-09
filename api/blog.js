@@ -4,7 +4,6 @@ import fs from 'fs';
 
 let router = express.Router();
 
-
 router.get('/', (req, res) => {
     Blog.find({}, (err, blogs) => {
         if(err) res.status(400).json(err);
