@@ -544,10 +544,12 @@ footer .container {
   background: #f6a21d;
   color: white;
   font-size: 18px;
+  border-radius: 50px;
 }
 #hire-page .main-hire .hire-item .group-btn button:first-child {
   margin-bottom: 20px;
 }
+
 
 /* Products */
 #products .banner-products {
@@ -701,6 +703,14 @@ a#send-cv:link {
   main #contact .location img {
     width: 100%;
   }
+  .hr-group {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .contact-blog-thumbnail {
+    width: 100% !important;
+  }
+
 }
 @media only screen and (min-width: 480px) {
     .masonry {
@@ -724,6 +734,13 @@ a#send-cv:link {
       top: 50%;
       left: 0; right: 0;
       transform: translate(0, -50%);
+    }
+    #our-founder .content-founder {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
     }
 }
 
@@ -757,12 +774,38 @@ a#send-cv:link {
       margin-left: 50px;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
+  .content-new-blog {
+    display: none !important;
+  }
   #contact .new-blog {
     display: block;
   }
   #hire-page .main-hire .hire-item .thumb-hire img {
     width: 100%;
+  }
+  p#title-new-blog-479 {
+    float: left;
+    background: #337ab7;
+    padding: 3px;
+    color: white;
+  }
+  #our-founder .content-founder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    min-height: 70px;
+    overflow: hidden;
+  }
+  #our-founder .carousel-inner {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 @media (min-width: 480px) {
@@ -771,6 +814,9 @@ a#send-cv:link {
   }
   main #stats .content-stats p#description {
     font-size: 20px;
+  }
+  #overlay-newblog-contact {
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -843,7 +889,6 @@ a#send-cv:link {
   }
   main #our-works .modal-dialog-index {
     position: relative;
-    top: 40%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -879,7 +924,7 @@ a#send-cv:link {
     margin-top: 20px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   main #banner #banner-content #banner-title {
     font-size: 46px !important;
   }
@@ -933,6 +978,9 @@ a#send-cv:link {
   #hire-page .main-hire .hire-item .description-hire {
     clear: both;
   }
+  main #contact .new-blog {
+    justify-content: center;
+  }
 }
 @media (max-width: 1200px) {
   main #contact p#title {
@@ -974,7 +1022,6 @@ a#send-cv:link {
     top: 50%;
   }
   #hire-page .main-hire .hire-item .group-btn button {
-    border-radius: 50px;
     display: block;
     width: 170px;
     outline: none;
