@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon --watch server --watch models --watch api --exec babel-node server/server.js",
+    "start": "nodemon --watch server --watch models --watch api --exec babel-node -- server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
