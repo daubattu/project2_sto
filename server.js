@@ -24,14 +24,14 @@ import config from './api/config.js';
 import hire from './api/hire.js';
 import blog from './api/blog.js';
 
-app.use('/products', products);
-app.use('/utils', utils);
-app.use('/config', config);
-app.use('/hire', hire);
-app.use('/blog', blog);
+app.use('/api/products', products);
+app.use('/api/utils', utils);
+app.use('/api/config', config);
+app.use('/api/hire', hire);
+app.use('/api/blog', blog);
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
-}) 
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/public/index.html');
+// }) 
 
 app.listen(80); 

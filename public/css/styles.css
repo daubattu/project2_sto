@@ -506,7 +506,6 @@ footer .container {
 /* Hire-page */
 #hire-page .banner-hire {
   position: relative;
-  height: 490px;
   background: url(../images/hire-page/banner.png) fixed;
   background-size: cover;
   background-position: center;
