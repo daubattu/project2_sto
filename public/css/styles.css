@@ -8,6 +8,9 @@ body.modal-open {
 a:hover {
   text-decoration: none;
 }
+.btn .caret {
+    margin-left: 5px;
+}
 .center-align {
   position: absolute;
   top: 50%;
@@ -179,10 +182,6 @@ main #stats .content-stats p#number {
 }
 main #stats .content-stats {
   padding: 25px 0;
-  transition: transform 0.5s linear;
-}
-main #our-stats .content-stats:hover {
-  transform: translateY(-5px);
 }
 main #stats .content-stats p#description {
   font-size: 18px;
@@ -194,6 +193,10 @@ main #stats .content-stats p#description {
 #our-works #our-works-title {
   position: relative;
   display: flex;
+}
+#our-works-title .navbar-nav {
+    position: absolute;
+    right: 0;
 }
 #our-works #our-works-title .navbar-right {
   position: absolute;
@@ -870,7 +873,6 @@ a#send-cv:link {
   .navbar-nav {
     margin: 0;
     text-align: center;
-    background: black;
   }
   .navbar-default .navbar-right li a {
     margin-left: 0;
@@ -891,7 +893,7 @@ a#send-cv:link {
   }
   main #our-works #dropdownMenu1 {
     background: #ccc;
-
+    border-radius: 0;
   }
   main #our-works .modal-dialog-index {
     position: relative;
