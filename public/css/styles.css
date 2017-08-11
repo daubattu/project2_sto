@@ -807,6 +807,10 @@ a#send-cv:link {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  main #our-works .modal-dialog-index {
+    height: 50vh;
+    top: 50% !important;
+  }
 }
 @media (min-width: 480px) {
   #hire-page .main-hire .hire-item .thumb-hire {
@@ -866,6 +870,7 @@ a#send-cv:link {
   .navbar-nav {
     margin: 0;
     text-align: center;
+    background: black;
   }
   .navbar-default .navbar-right li a {
     margin-left: 0;
@@ -885,7 +890,8 @@ a#send-cv:link {
     padding: 70px 0;
   }
   main #our-works #dropdownMenu1 {
-    border: none;
+    background: #ccc;
+
   }
   main #our-works .modal-dialog-index {
     position: relative;
