@@ -88,14 +88,14 @@ main #banner #banner-content p#sologan {
   font-size: 24px;
 }
 .navbar-default {
-  transition: background 2s linear;
+  transition: background 0.5s linear;
   position: fixed;
   left: 0; right: 0;
   border: none;
   margin-bottom: 0;
 }
 .navbar-default .container-fluid {
-  transition: background 2s linear;
+  transition: background 0.5s linear;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
