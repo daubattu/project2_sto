@@ -124,7 +124,6 @@ router.post('/', (req, res) => {
 			images.push(imageObject);
 			return image.data.replace(/^data:image\/(png|gif|jpeg);base64,/, "");
 		})
-		console.log('imagessssssssssssssssssssssssssssssssss', images)
 		newProduct.images = images;
 	}
 	if(req.body.category) {

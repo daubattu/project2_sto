@@ -190,7 +190,7 @@ main #stats .content-stats p#description {
 #our-works {
   padding: 110px 0;
 }
-#our-works #our-works-title {
+#our-works-title {
   position: relative;
   display: flex;
 }
@@ -198,16 +198,16 @@ main #stats .content-stats p#description {
     position: absolute;
     right: 0;
 }
-#our-works #our-works-title .navbar-right {
+#our-works-title .navbar-right {
   position: absolute;
   right: 0;
 }
-#our-works #our-works-title a, #products .products-main .container-fluid .our-projects #our-works-title ul li a {
+#our-works-title a, #products .products-main .container-fluid .our-projects #our-works-title ul li a {
   color: black;
   font-size: 20px;
   margin: 0 10px;
 }
-#our-works #our-works-title ul a:hover, #products .products-main .container-fluid .our-projects #our-works-title ul li a:hover {
+#our-works-title ul a:hover, #products .products-main .container-fluid .our-projects #our-works-title ul li a:hover {
   color: white;
   background: #fdb53f;
 }
@@ -880,14 +880,14 @@ a#send-cv:link {
     transform: translate(0, -50%);
     margin: 0;
   }
-  main #our-works #our-works-title .dropdown .dropdown-menu {
+  #our-works-title .dropdown .dropdown-menu {
     left: initial;
     right: 0;
   }
   main #our-stats {
     padding: 70px 0;
   }
-  main #our-works #dropdownMenu1 {
+  #dropdownMenu1 {
     background: #ccc;
     border-radius: 0;
   }
