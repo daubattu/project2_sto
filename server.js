@@ -4,7 +4,8 @@ import mongoose from 'mongoose';
 
 let app = express();
 
-let db = 'mongodb://127.0.0.1:27017/project_2';
+// let db = 'mongodb://127.0.0.1:27017/project_2';
+let db = 'mongodb://admin:admin@ds011820.mlab.com:11820/blog';
 mongoose.connect(db);
 
 app.use(function(req, res, next) {
@@ -30,8 +31,8 @@ app.use('/api/config', config);
 app.use('/api/hire', hire);
 app.use('/api/blog', blog);
 
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
    res.sendFile(__dirname + '/public/index.html');
 }) 
 
-app.listen(80); 
+app.listen(8080); 
