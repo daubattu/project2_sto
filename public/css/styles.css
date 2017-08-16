@@ -5,6 +5,16 @@ body {
 body.modal-open {
   padding: 0 !important;
 }
+#preloader {
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:99999999999;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  background: #fff url('../images/AjaxLoader.gif') no-repeat center center;
+}
 a:hover {
   text-decoration: none;
 }
@@ -219,48 +229,54 @@ main #stats .content-stats p#description {
   margin: -3px 0 0 0;
 }
 
-main #our-founder {
+#quotes{
+	background: url('../images/cover-2.png') fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+  -webkit-background-size: cover;
+  height: 440px;
+	background-size: cover;
+	color: #ccc;
+	position: relative;
+}
+#quotes .fa.fa-arrow-right, #quotes .fa.fa-arrow-left {
+    position: relative;
+    top: 50%;
+}
+#quotes .fa.fa-arrow-right {
+    right: 0;
+}
+#quotes .carousel-control {
+    position: initial;
+}
+#quotes .group-nav-slider {
+    margin-top: 10px;
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+}
+#quotes .group-nav-slider #nav-slider-next, #quotes .group-nav-slider #nav-slider-prev {
+    padding: 5px; padding-top: 3px;
+    background: #ccc;
+    color: black;
+    margin-top: 0;
+    border-radius: 5px;
+    font-size: 15px; 
+    margin: 0 5px;
+}
+#quotes p#feedback {
   position: relative;
-  height: 100vh;
-  background: url('../images/cover-2.png') no-repeat fixed;
-  background-size: cover;
-  background-position: center;
-  color: #e2dee0;
+  font-style: italic;
+  min-height: 45px;
 }
-main #founder .carousel-inner .item {
-  background: none !important;
-}
-main #founder .carousel-indicators {
-  bottom: -50px;
-}
-main #founder .carousel-control.left, main #founder .carousel-control.right {
-  background: none;
-}
-main #founder-content {
-  width: 100%;
-}
-main #founder .carousel {
-  width: 100%;
-}
-main #our-founder #founder-content p {
+#quotes blockquote {
   font-size: 16px;
+  border-left: 0;
 }
-main #our-founder #founder-content p#name-founder {
-  font-size: 20px;
-}
-main #our-founder .content-founder-group {
-  min-height: 100px;
-  display: flex;
-  position: relative;
-}
-main #our-founder .content-founder-group #quote-left {
+#quotes .vertical-align {
+  width: 100%;
   position: absolute;
-  transform: translateY(-30px);
-}
-main #our-founder .content-founder-group #quote-right {
-  position: absolute;
-  right: 0;
-  transform: translateY(20px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 main #our-skills {
@@ -452,7 +468,6 @@ main #contact img#loading, main #contact span#message-send-email {
     margin-top: 30px;
     margin-left: 30px;
 }
-
 footer {
   background: #1e1e22;
   height: 85px;
@@ -461,6 +476,11 @@ footer .container {
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
+}
+footer .footer-left i {
+  font-size: 25px !important;
+  margin: 0 5px;
+  color: rgb(110, 110, 111);
 }
 .masonry {  
   margin: 1.5em 1.5em;
@@ -729,7 +749,7 @@ a#send-cv:link {
         -webkit-column-count: 3;
         column-count: 3;
     }
-    main #our-founder .content-founder {
+    main #quotes .content-founder {
       padding: 0 150px;
     }
     main #stats #stats-content {
@@ -738,7 +758,7 @@ a#send-cv:link {
       left: 0; right: 0;
       transform: translate(0, -50%);
     }
-    #our-founder .content-founder {
+    #quotes .content-founder {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -793,22 +813,10 @@ a#send-cv:link {
     padding: 3px;
     color: white;
   }
-  #our-founder .content-founder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    min-height: 70px;
-    overflow: hidden;
-  }
-  #our-founder .carousel-inner {
+  #quotes .carousel-inner {
     width: 100%;
     overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
   }
 }
 @media (min-width: 480px) {
@@ -1003,6 +1011,21 @@ a#send-cv:link {
   }
 }
 @media (min-width: 992px) {
+  #quotes .vertical-align {
+    width: 90%;
+  }
+  #quotes p#feedback::before {
+    font-family: FontAwesome;
+    content: "\f10d";
+    position: absolute;
+    top: 0; left: 0;
+  }
+  #quotes p#feedback::after {
+    font-family: FontAwesome;
+    content: "\f10e";
+    position: absolute;
+    bottom: 0; right: 0;
+  }
   main #contact .location img {
     width: 100%;
   }
@@ -1080,6 +1103,9 @@ a#send-cv:link {
     top: 50%;
     transform: translateY(-50%);
   }
+  #quotes .vertical-align {
+    padding: 0 10%;
+  }
   #hire-page .main-hire .thumb-hire {
     position: relative;
     top: 50%; transform: translateY(-50%);
@@ -1098,7 +1124,7 @@ a#send-cv:link {
  }
 }
 @media (min-width: 1400px) {
-  main #services #services-content, main #our-founder #founder-content {
+  main #services #services-content, main #quotes #founder-content {
     left: 50%;
     transform: translate(-50%, -50%);
   }
